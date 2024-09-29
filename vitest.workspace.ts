@@ -1,6 +1,5 @@
-import { defineWorkspace } from 'vitest/config';
-import { storybookTest } from '@storybook/experimental-addon-test/vitest-plugin';
-
+import { defineWorkspace } from 'vitest/config'
+import { storybookTest } from '@storybook/experimental-addon-test/vitest-plugin'
 
 // More info at: https://storybook.js.org/docs/writing-tests/vitest-plugin
 export default defineWorkspace([
@@ -9,7 +8,9 @@ export default defineWorkspace([
     extends: 'vite.config.ts',
     plugins: [
       // See options at: https://storybook.js.org/docs/writing-tests/vitest-plugin#storybooktest
-      storybookTest(),
+      storybookTest({
+        storybookScript: 'pnpm run storybook --no-open',
+      }),
     ],
     test: {
       name: 'storybook',
@@ -24,4 +25,4 @@ export default defineWorkspace([
       setupFiles: ['./.storybook/vitest.setup.ts'],
     },
   },
-]);
+])

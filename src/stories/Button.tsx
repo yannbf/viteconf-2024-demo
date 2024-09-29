@@ -11,6 +11,8 @@ export interface ButtonProps {
   size?: 'small' | 'medium' | 'large';
   /** Button contents */
   label: string;
+  /** Whether the button is disabled or not */
+  disabled?: boolean;
   /** Optional click handler */
   onClick?: () => void;
 }
